@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Amaan - Cybersecurity Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #00ff00;
+            --secondary-color: #ffffff;
+            --bg-color: #000000;
+            --accent-color: #ff0000;
+        }
+
+        /* Theme Variables */
+        [data-theme="dark"] {
+            --primary-color: #ffffff;
+            --secondary-color: #cccccc;
+            --bg-color: #1a1a1a;
+            --accent-color: #007bff;
+        }
+
+        [data-theme="light"] {
+            --primary-color: #333333;
+            --secondary-color: #666666;
+            --bg-color: #f8f9fa;
+            --accent-color: #007bff;
+        }
+
+        [data-theme="offensive"] {
+            --primary-color: #ff4444;
+            --secondary-color: #ff8888;
+            --bg-color: #2a0a0a;
+            --accent-color: #ff0000;
+        }
+
+        [data-theme="defensive"] {
+            --primary-color: #44ff44;
+            --secondary-color: #88ff88;
+            --bg-color: #0a2a0a;
+            --accent-color: #00ff00;
+        }
+
+        [data-theme="matrix"] {
+            --primary-color: #00ff00;
+            --secondary-color: #009900;
+            --bg-color: #000000;
+            --accent-color: #00cc00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Theme Switcher */
+        .theme-switcher {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px 0 0 10px;
+        }
+
+        .theme-btn {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Matrix Animation */
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        /* Footer */
+        .footer {
+            position: relative;
+            padding: 2rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            animation: footerGlow 3s infinite;
+        }
+
+        @keyframes footerGlow {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas class="matrix-bg" id="matrix"></canvas>
+
+    <header class="header">
+        <nav class="nav">
+            <h1>Cyber Amaan</h1>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="theme-switcher">
+        <button class="theme-btn" data-theme="dark" style="background: #1a1a1a"></button>
+        <button class="theme-btn" data-theme="light" style="background: #f8f9fa"></button>
+        <button class="theme-btn" data-theme="offensive" style="background: #ff4444"></button>
+        <button class="theme-btn" data-theme="defensive" style="background: #44ff44"></button>
+        <button class="theme-btn" data-theme="matrix" style="background: #00ff00"></button>
+    </div>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Cybersecurity experts protecting your digital assets</p>
+    </section>
+
+    <section id="projects">
+        <h2>Our Projects</h2>
+        <!-- Project cards here -->
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <!-- Experience timeline here -->
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <!-- Contact form here -->
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2023 Cyber Amaan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Theme Switching
+        const themeButtons = document.querySelectorAll('.theme-btn');
+        themeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const theme = button.dataset.theme;
+                document.body.setAttribute('data-theme', theme);
+
+                if(theme === 'matrix') {
+                    startMatrixAnimation();
+                } else {
+                    stopMatrixAnimation();
+                }
+            });
+        });
+
+        // Matrix Animation
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function startMatrixAnimation() {
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
+            const drops = Array(Math.floor(canvas.width / 10)).fill(0);
+
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = '#0F0';
+                ctx.font = '14px monospace';
+
+                drops.forEach((drop, i) => {
+                    const char = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(char, i * 10, drop * 10);
+
+                    if(drop * 10 > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                });
+            }
+
+            let animationInterval = setInterval(draw, 50);
+
+            function stopMatrixAnimation() {
+                clearInterval(animationInterval);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                window.removeEventListener('resize', resizeCanvas);
+            }
+
+            window.stopMatrixAnimation = stopMatrixAnimation;
+        }
+    </script>
+</body>
+</html>
