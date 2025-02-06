@@ -1,0 +1,333 @@
+/* General Styles */
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e6e6e6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.home {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    height: 30vh; /* Full viewport height */
+    text-align: center/*; Ensures inline text is centered */
+     /* Stack elements vertically */
+}
+
+/* Animated Heading */
+.home h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    margin: 2rem 0;
+    position: relative;
+    color: #fff;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Problem Cards Animation */
+.problems {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInBounce 1s ease forwards;
+}
+
+@keyframes fadeInBounce {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.problems:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: #00abf0;
+}
+
+/* Animated Code Blocks */
+pre {
+    background: #2d2d44 !important;
+    border-radius: 10px !important;
+    border: 2px solid #3d3d5c;
+    padding: 1.5rem !important;
+    position: relative;
+    overflow: hidden;
+    animation: glow 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px #00abf0;
+    }
+    to {
+        box-shadow: 0 0 20px #00abf0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home h1 {
+        font-size: 2.5rem;
+    }
+
+    .problems {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    pre {
+        font-size: 0.9rem;
+    }
+}
+
+/* General Styles */
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #e6e6e6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+.home h1{
+    text-align: center;
+    font-size: 3.5rem;
+    margin: 2rem 0;
+    position: relative;
+    color: #fff;
+    display: inline-block;
+}
+.home h1 span{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: 0.7px #00abf0;
+    animation: display-text 12s linear infinite;
+    animation-delay: calc(-4s * var(--i));
+}
+@keyframes display-text {
+    25%, 100%{
+        display: none;
+    }
+}
+.home h1 span::before{
+    content: attr(data-text);
+    position: absolute;
+    width: 0;
+    border-right: 2px solid #00abf0;
+    color: #00abf0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: fill-text 3s linear infinite;
+}
+@keyframes fill-text {
+    10%,100%{
+        width: 0;
+    }
+    70%, 90%{
+        width: 100%;
+    }
+}
+
+/* Animated Header */
+
+
+
+
+
+
+/* Problem Cards */
+.problems {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.problems:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: #00abf0;
+}
+
+/* Typography */
+h2 {
+    color: #00abf0;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #00abf0;
+    border-radius: 2px;
+}
+
+h3 {
+    color: #7effdb;
+    margin: 1.5rem 0;
+}
+
+p {
+    color: #cccccc;
+    font-size: 1.1rem;
+}
+
+/* Code Blocks */
+pre {
+    background: #2d2d44 !important;
+    border-radius: 10px !important;
+    border: 2px solid #3d3d5c;
+    padding: 1.5rem !important;
+    position: relative;
+    overflow: hidden;
+}
+
+pre::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(126, 255, 219, 0.1) 50%,
+        transparent 100%);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(50%); }
+}
+
+/* Image Styling */
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin: 1rem 0;
+    border: 2px solid #3d3d5c;
+}
+
+/* List Styling */
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.5rem 0;
+    color: #cccccc;
+}
+
+li::marker {
+    color: #7effdb;
+}
+
+/* Scroll Animation */
+.problems {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.problems.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home h1 {
+        font-size: 2.5rem;
+    }
+
+    .problems {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    pre {
+        font-size: 0.9rem;
+    }
+}
+
+/* Code Container */
+.code-container {
+    position: relative;
+    margin-top: 10px;
+}
+
+/* Buttons */
+.copy-btn, .toggle-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #00abf0;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.toggle-btn {
+    right: 70px; /* Position "Hide" button next to "Copy" */
+}
+
+.copy-btn:hover, .toggle-btn:hover {
+    background: #008ac7;
+}
+
+/* Hide Code */
+.hidden {
+    display: none;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Problem</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Highlight.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+
+    <script src="script.js"></script>
+</head>
+<body>
+
+<div class="home">
+<h1>
+    JavaScript basic
+    <span style="--i:3;" data-text="Exercises">Exercises</span>
+    <span style="--i:2;" data-text="Practice">Practice</span>
+    <span style="--i:1;" data-text="Solution">Solution</span>
+</h1>
+</div>
+
+
+<div class="problems" id="p1">
+    <h2>Calculate Area of Triangle (Sides: 5, 6, 7)</h2>
+    <p>Write a JavaScript program to find the area of a triangle where three sides are 5, 6, 7. This JavaScript program calculates the area of a triangle with sides of lengths 5, 6, and 7 using
+        Heron's formula. It first computes the semi-perimeter (s) of the triangle, then uses it to
+        find the area, which is logged to the console.
+    </p>
+
+    <h3>Sample Solution:</h3>
+    <h3>JavaScript Code:</h3>
+    <button class="copy-btn">Copy</button>
+    <button class="toggle-btn">Hide</button>
+    <div class="code-container">
+        <pre><code class="language-javascript">
+// Define the lengths of the three sides of a triangle
+var side1 = 5;
+var side2 = 6;
+var side3 = 7;
+
+// Calculate the semi-perimeter of the triangle
+var s = (side1 + side2 + side3) / 2;
+
+// Use Heron's formula to calculate the area of the triangle
+var area = Math.sqrt(s * ((s - side1) * (s - side2) * (s - side3)));
+
+// Log the calculated area to the console
+console.log(area);
+
+    </code></pre>
+    </div>
+</div>
+
+<div class="problems" id="p2">
+    <h2>Rotate String 'w3resource' Periodically</h2>
+    <p>Write a JavaScript program to rotate the string 'w3resource' in the right direction. This is done by periodically removing one letter from the string end and attaching it to the front.
+        The JavaScript program continuously rotates the string 'w3resource' to the right by periodically moving the last
+        character to the front. It uses the setInterval function to update the string every 100 milliseconds, modifying the text content of a specified HTML element by its ID.
+    </p>
+    <h3>Sample Solution:</h3>
+    <h3>JavaScript Code:</h3>
+    <button class="copy-btn">Copy</button>
+    <button class="toggle-btn">Hide</button>
+    <div class="code-container">
+            <pre><code class="language-javascript">
+// Define a function that animates the characters of a string
+function animate_string(id) {
+    // Get the HTML element by its id
+    var element = document.getElementById(id);
+
+    // Access the text node inside the element (assuming no other children)
+    var textNode = element.childNodes[0];
+
+    // Extract the initial text content of the text node
+    var text = textNode.data;
+
+    // Set up an interval to rotate the characters in the text every 100 milliseconds
+    setInterval(function () {
+        // Move the last character to the beginning of the string
+        text = text[text.length - 1] + text.substring(0, text.length - 1);
+
+        // Update the text content of the text node with the modified string
+        textNode.data = text;
+    }, 100);
+}
+
+    </code></pre>
+    </div>
+    </div>
+
+
+<div class="problems" id="p3">
+    <h2>Check Leap Year (Gregorian  Calendar)</h2>
+    <p>Write a JavaScript program to determine whether a given year is a leap year in the Gregorian  calendar.
+The JavaScript program checks if a given year is a leap year by determining if it is divisible by 4 but not by 100,
+        or if it is divisible by 400. It uses conditional statements to implement these rules and then prints whether the year is a leap year or not.
+    </p>
+    <h3>Visual Presentation:</h3>
+    <img src="img.png">
+    <h3>Sample Solution:</h3>
+    <h3>JavaScript Code:</h3>
+    <button class="copy-btn">Copy</button>
+    <button class="toggle-btn">Hide</button>
+    <div class="code-container">
+    <pre><code class="language-javascript">
+ // Define a function to check if a given year is a leap year
+function leapyear(year) {
+    // Return true if the year is divisible by 4 but not divisible by 100 unless it's also divisible by 400
+    return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+}
+
+// Test the function with various years and log the results to the console
+console.log(leapyear(2016)); // Expected output: true
+console.log(leapyear(2000)); // Expected output: true
+console.log(leapyear(1700)); // Expected output: false
+console.log(leapyear(1800)); // Expected output: false
+console.log(leapyear(100));  // Expected output: false
+
+    </code></pre>
+    </div>
+</div>
+
+<div class="problems" id="p4">
+    <h2>Find Years When Jan 1 is Sunday (2014–2050)</h2>
+    <p>Write a JavaScript program to find out if 1st January will be a Sunday between 2014 and 2050.</p>
+    <p>To find out which years between 2014 and 2050 have 1st January falling on a Sunday, we can use the following approach:</p>
+    <ul>
+        <li>Loop through each year between 2014 and 2050 and check if the 1st January of that year falls on a Sunday.</li>
+        <li>To check if the 1st January of a year is a Sunday, we can use the Date object in JavaScript. Create a Date object for the 1st January of each year and use the getDay() method to get the day of the week. The getDay() method returns an integer between 0 and 6, where 0 represents Sunday, 1 represents Monday, and so on.</li>
+        <li>If the day of the week is 0 (Sunday), we can print out the year.</li>
+    </ul>
+    <p>Here is the algorithm in pseudocode:</p>
+    <pre><code class="language-pseudocode">
+for year = 2014 to 2050 do
+    create a Date object for 1st January of year
+    if day of the week of Date object is Sunday then
+        print year
+    end if
+end for
+    </code></pre>
+    <p>Using this approach, we can find out that the years with 1st January falling on a Sunday between 2014 and 2050.</p>
+    <h3>Sample Solution:</h3>
+    <h3>JavaScript Code:</h3>
+    <button class="copy-btn">Copy</button>
+    <button class="toggle-btn">Hide</button>
+    <div class="code-container">
+    <pre><code class="language-javascript">
+// Log a separator to visually distinguish the output
+console.log('--------------------');
+
+// Loop through the years from 2014 to 2050 (inclusive)
+for (var year = 2014; year <= 2050; year++) {
+    // Create a Date object for January 1st of the current year
+    var d = new Date(year, 0, 1);
+
+    // Check if January 1st is a Sunday (where Sunday corresponds to day index 0)
+    if (d.getDay() === 0) {
+        // Log a message if January 1st is a Sunday for the current year
+        console.log("1st January is being a Sunday  " + year);
+    }
+}
+
+// Log another separator to conclude the output
+console.log('--------------------');
+
+    </code></pre>
+</div>
+</div>
+
+ <!-- Highlight.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+</html>

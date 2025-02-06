@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    border-bottom: #77aaff 3px solid;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 10px 0 0;
+}
+
+header li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #77aaff;
+}
+
+/* Main Content Styles */
+.main {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.main h1, .main h2 {
+    text-align: center;
+    color: #333;
+}
+
+.main p {
+    margin: 10px 0;
+    text-align: justify;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* List Styles */
+ul {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+dl {
+    margin-top: 10px;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+dd {
+    margin-left: 20px;
+    color: #555;
+}
+ul {
+    padding-left: 20px;
+    list-style-type: disc;
+    margin: 10px 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Definition List Styles */
+dl {
+    margin-top: 10px;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+dd {
+    margin-left: 20px;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #77aaff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    header ul {
+        text-align: left;
+    }
+}
+        /*TEST DESIGN*/
+        header h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .main {
+            margin-top: 2rem;
+        }
+
+        figure img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        figure figcaption {
+            margin-top: 0.5rem;
+            text-align: center;
+            font-style: italic;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        footer h1, footer p, footer a {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: #77aaff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>About me</h1>
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#edu">Education</a></li>
+                <li><a href="#honour">Awards</a></li>
+                <li><a href="#exp">Experience</a></li>
+                <li><a href="#skill">Skills</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#languages">Languages</a></li>
+            </ul>
+
+        </div>
+    </header>
+
+    <div id="profile" class="container main">
+        <h1>Hello I'm Shuhrat Rustamov</h1>
+        <p>My name is <b>Shuhrat</b>. I was born on <em>November 3</em>, 2005, in Romitan, Bukhara.
+            Nowadays, I am a student at New Uzbekistan University. I am interested in <strong>Cyber Security</strong>. I
+have won several competitions in our region. My hobbies
+are reading books, making robots, and drawing.</p>
+    </div>
+
+    <div id="edu" class="main container">
+        <h2>New Uzbekistan University</h2>
+        <p>2023 - PRESENT</p>
+        <ul>
+            <li>Bachelor of Cyber Security</li>
+        </ul>
+
+        <h2>Bukhara Presidential School</h2>
+        <p>2021-2023</p>
+        <ul>
+            <li>GPA: 4.65/5.0</li>
+            <li>A & AS level from Math, Physics, Computer Science (A+, C, D respectively)</li>
+            <li>IELTS 6.5</li>
+        </ul>
+
+        <h2>Romitan district 11-school</h2>
+        <p>2012-2021</p>
+        <ul>
+            <li>GPA: 5.0/5.0</li>
+            <li>3rd place in a regional Math Olympiad</li>
+        </ul>
+    </div>
+
+    <div id="honour" class="main container">
+        <h1>Honours and Awards</h1>
+        <table border="1">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Year</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2018-2021</td>
+                <td>Math Olympiad</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>2020</td>
+                <td>Chess tournament</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>2019</td>
+                <td>"Zakovat" tournament</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>2017-2020</td>
+                <td>"Student of the year</td>
+            </tr>
+
+        </tbody>
+    </table>
+    </div>
+
+    <div id="exp" class="main container">
+
+    </div>
+
+    <div id="skill" class="main container">
+
+    </div>
+
+    <div id="hobbies" class="main container">
+
+    </div>
+
+    <div id="languages" class="container main">
+        <h1>Languages</h1>
+        <p>List of languages which I know:</p>
+        <dl>
+            <dt><b>Uzbek</b></dt>
+            <dd>Fluent</dd>
+            <dt><b>English</b></dt>
+            <dd>Intermediate</dd>
+            <dt><b>Tadjik</b></dt>
+            <dd>Intermediate</dd>
+            <dt><b>Turkish</b></dt>
+            <dd>Intermediate</dd>
+        </dl>
+    </div>
+<footer>
+    <div class="container">
+        <h1>Contact</h1>
+        <p><b>Phone: </b> +998 (99) 429 54 88</p>
+        <p><b>Email: </b> sh.rustamov@newuu.uz</p>
+        <p><a href="https://www.linkedin.com/in/shuhrat-rustamov/"><b>LinkedIn</b></a></p>
+    </div>
+</footer>
+</body>
+</html>
